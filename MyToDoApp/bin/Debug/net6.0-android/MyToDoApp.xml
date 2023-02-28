@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyToDoApp</name>
+    </assembly>
+    <members>
+        <member name="P:MyToDoApp.ViewModels.AddTaskViewModel.TaskDetails">
+            <inheritdoc cref="F:MyToDoApp.ViewModels.AddTaskViewModel.taskDetails"/>
+        </member>
+        <member name="F:MyToDoApp.ViewModels.TaskViewModel.addTaskCommand">
+            <summary>The backing field for <see cref="P:MyToDoApp.ViewModels.TaskViewModel.AddTaskCommand"/>.</summary>
+        </member>
+        <member name="P:MyToDoApp.ViewModels.TaskViewModel.AddTaskCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:MyToDoApp.ViewModels.TaskViewModel.AddTask"/>.</summary>
+        </member>
+    </members>
+</doc>

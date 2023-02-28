@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:MyToDoApp.ViewModels"             
+             xmlns:local="clr-namespace:MyToDoApp.Views"
+             x:Class="MyToDoApp.Views.TaskListPageView"
+             Title="Inbox"
+             BackgroundColor="MintCream"
+              >
+    <Grid Margin="5,5,5,35">
+       
+        <ScrollView>
+            
+            <CollectionView ItemsSource="{Binding Tasks}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="10" Padding="10">
+                            <StackLayout>
+                                <HorizontalStackLayout Spacing="15">
+                                    <Label Text="{Binding Title}" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding Description}" FontSize="16" TextColor="Black"/>
+                                 
+                            </StackLayout>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:TaskViewModel}},Path=DisplayActionCommand}" 
+                                                  CommandParameter="{Binding .}"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>        
+            
+        <Button Margin="0,0,4,0" Text="+" BackgroundColor="Blue" FontAttributes="Bold" FontSize="40" TextColor="White" CornerRadius="20" Command="{Binding AddTaskCommand}" HorizontalOptions="End" VerticalOptions="EndAndExpand"/>
+          
+    </Grid>
+</ContentPage>

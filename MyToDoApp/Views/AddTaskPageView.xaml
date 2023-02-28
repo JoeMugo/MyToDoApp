@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyToDoApp.Views.AddTaskPageView"
+             Title="Add a New Task"
+             BackgroundColor="MintCream">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="TextColor" Value="SlateGray"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Margin="10" Spacing="10">     
+        
+        <!--TITLE BOX-->
+        <VerticalStackLayout Margin="0,0,0,15">
+            
+            <Label Text="Title" FontSize="16" TextColor="Black"/>
+            <Frame Padding="10" >
+                <Entry Placeholder="Task Title" 
+                       VerticalTextAlignment="Start" 
+                       HorizontalTextAlignment="Start" 
+                       HeightRequest="40" Text="{Binding TaskDetails.Title}" 
+                       TextColor="Black" 
+                       ClearButtonVisibility="WhileEditing"
+                       PlaceholderColor="Black"/>
+            </Frame>
+            
+        </VerticalStackLayout>
+        
+        <!--DESCRIPTION BOX-->
+        <VerticalStackLayout Margin="0,0,0,15">
+            
+            <Label Text="Description" FontSize="16" TextColor="Black"/>
+            <Frame Padding="10">
+                
+                <Entry Placeholder="Task Description" 
+                       HeightRequest="100"
+                       HorizontalTextAlignment="Start" 
+                       VerticalTextAlignment="Start"  
+                       Text="{Binding TaskDetails.Description}" 
+                       TextColor="Black" 
+                       PlaceholderColor="Black"/>
+            </Frame>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout HorizontalOptions="Start" Padding="10">
+            <Label Text="Time" FontSize="26" TextColor="Black" HorizontalOptions="StartAndExpand" />
+            
+            
+        </VerticalStackLayout>
+        
+        <!--SAVE BUTTON & DELETE BUTTON-->
+        <Button Command="{Binding AddTaskCommand}" Text="Save" BackgroundColor="Blue" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+        <Button Text="Delete" BackgroundColor="Blue" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+    </StackLayout>
+</ContentPage>
